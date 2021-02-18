@@ -1,32 +1,55 @@
-# Prerequisites
-*.d
+#include<iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+class infoStd{
+        private:
+            double cgpa;
+            int credit;
 
-# Precompiled Headers
-*.gch
-*.pch
+        public:
+            string uni_name;
+            string std_name;
+            string id;
+            string prog;
+            string dept;
+            string semester;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+            void getData(){
+                cout<<"Institution Name: "<<uni_name<<endl<<"Student Name: "<<std_name<<endl<<"ID: "<<id<<endl<<"Program: "<<prog<<endl<<"Department: "<<dept<<endl<<"Semester: "<<semester<<endl;
+                cout<<"Private Data: "<<endl;
+            }
+           void set_cgpa(double x)
+           {
+               cgpa=x;
+           }
+           double get_cgpa(){
+               return cgpa;
+           }
 
-# Fortran module files
-*.mod
-*.smod
+           void set_credit(int y)
+           {
+               credit=y;
+           }
+           int get_credit(){
+                return credit;
+           }
+};
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+int main(){
+    infoStd obj1, obj2, obj3;
+    obj1.set_cgpa(3.8);
+    obj1.get_cgpa();
+    obj1.set_credit(40);
+    obj1.get_credit();
+    obj1.uni_name = "American International University - Bangladesh.";
+    obj1.std_name = "Alam, Sanjida";
+    obj1.id = "27-57984-3";
+    obj1.prog = "Bachelor of Science in Computer Science & Engineering";
+    obj1.dept = "FACULTY OF SCIENCE & TECHNOLOGY";
+    obj1.semester = "4th Semester";
 
-# Executables
-*.exe
-*.out
-*.app
+    obj1.getData();
+    cout<< "CGPA : "<<obj1.get_cgpa()<<endl;
+    cout<< "Credits Completed: "<<obj1.get_credit()<<endl;
+    return 0;
+}
